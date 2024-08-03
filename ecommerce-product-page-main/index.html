@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">  
+
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<body class="body">
+  
+  <div class="appWrapper">
+       
+      <nav class="navigation_container">
+        <div class="left_nav">
+          <div class="menu_section">
+            <button class="menu_btn" id="menu_open">
+              <img src="./images/icon-menu.svg" alt="menu_icon">
+            </button>
+            <div id="menu_dropdown">
+              <button class="close_btn" id="menu_close">
+                <img src="./images/icon-close.svg" alt="close_btn">
+              </button>
+              <div class="menu_list">
+                <a href="#">Collections</a>
+                <a href="#">Men</a>
+                <a href="#">Women</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+              </div>
+              <div id="menu_opacity"></div>
+            </div>
+          </div>
+          <img src="./images/logo.svg" alt="logo_icon">
+          <div class="nav_links_list">
+            <a href="#">Collections</a>
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+          </div>
+        </div>
+        <div class="right_nav">
+          <div class="shopping_section">
+            <button class="shopping_cart" onclick="showCart()">
+              <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"/></svg>
+            </button>
+            <div class="shopping_dropdown">
+              <p>Cart</p>
+              <div id="cart_product">
+                Your cart is empty.
+              </div>
+            </div> 
+          </div>
+          <img class="avatar_img" src="./images/image-avatar.png" alt="avatar_img">
+        </div>
+      </nav>
+      
+      <main class="main_container">
+        <div class="left_section">
+          <button class="hero_image_btn" id="hero_image_btn">
+            <img id="hero_image1" src="./images/image-product-1.jpg" alt="product_img">
+            <img id="hero_image2" src="./images/image-product-2.jpg" alt="product_img">
+            <img id="hero_image3" src="./images/image-product-3.jpg" alt="product_img">
+            <img id="hero_image4" src="./images/image-product-4.jpg" alt="product_img">
+          </button>
+          <div class="image_gallery">
+            <button class="gallery_btn gallery_btn1">
+              <img id="small_img1" src="./images/image-product-1-thumbnail.jpg" alt="product_img">
+            </button>
+            <button class="gallery_btn gallery_btn2">
+              <img id="small_img2" src="./images/image-product-2-thumbnail.jpg" alt="product_img">
+            </button>
+            <button class="gallery_btn gallery_btn3">
+              <img id="small_img3" src="./images/image-product-3-thumbnail.jpg" alt="product_img">
+            </button>
+            <button class="gallery_btn gallery_btn4">
+              <img id="small_img4" src="./images/image-product-4-thumbnail.jpg" alt="product_img">
+            </button>
+          </div>
+          <div id="lightbox_section">
+            <button id="close_btn">
+              <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill-rule="evenodd"/></svg>
+            </button>
+            <div class="image_section">
+              <button class="hero_image_btn">
+                <img id="LBhero_image1" src="./images/image-product-1.jpg" alt="product_img">
+                <img id="LBhero_image2" src="./images/image-product-2.jpg" alt="product_img">
+                <img id="LBhero_image3" src="./images/image-product-3.jpg" alt="product_img">
+                <img id="LBhero_image4" src="./images/image-product-4.jpg" alt="product_img">
+                <button class="arrow arrow_left" id="arrow_left">
+                  <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8"/></svg>
+                </button>
+                <button class="arrow arrow_right" id="arrow_right">
+                  <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8"/></svg>
+                </button>
+              </button>
+              <div class="image_gallery">
+                <button class="gallery_btn gallery_btn1" id="LBgallery_btn1">
+                  <img id="small_img1" src="./images/image-product-1-thumbnail.jpg" alt="product_img">
+                </button>
+                <button class="gallery_btn gallery_btn2" id="LBgallery_btn2">
+                  <img id="small_img2" src="./images/image-product-2-thumbnail.jpg" alt="product_img">
+                </button>
+                <button class="gallery_btn gallery_btn3" id="LBgallery_btn3">
+                  <img id="small_img3" src="./images/image-product-3-thumbnail.jpg" alt="product_img">
+                </button>
+                <button class="gallery_btn gallery_btn4" id="LBgallery_btn4">
+                  <img id="small_img4" src="./images/image-product-4-thumbnail.jpg" alt="product_img">
+                </button>
+              </div>
+            </div>
+            <div id="lightbox_opacity"></div>
+          </div>
+        </div>
+        
+        <div id="mobile_image_gallery">
+          <img id="mobile_img1" src="./images/image-product-1.jpg" alt="product_img">
+          <img id="mobile_img2" src="./images/image-product-2.jpg" alt="product_img">
+          <img id="mobile_img3" src="./images/image-product-3.jpg" alt="product_img">
+          <img id="mobile_img4" src="./images/image-product-4.jpg" alt="product_img">
+          <button id="mobile_left_arrow">
+            <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" /></svg>
+          </button>
+          <button id="mobile_right_arrow">
+            <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8"/></svg>
+          </button>
+        </div>
+         
+        <div class="right_section">
+          <header class="header_section">
+            <p>Sneaker Company</p>
+            <h1>Fall Limited Edition Sneakers</h1>
+          </header>
+          <p class="description">
+            These low-profile sneakers are your perfect 
+            casual wear companion. Featuring a durable 
+            rubber outer sole, they’ll withstand everything 
+            the weather can offer.
+          </p>
+          <div class="price_section">
+            <p class="current_price">
+              $125.00
+              <span class="discount_number">50%</span>
+            </p>
+            <p class="previous_price">$250.00</p>
+          </div>
+          <div class="listing_section">
+            <div class="product_inventory">
+              <button class="decrement_btn" onclick="decrement()">
+                <img src="./images/icon-minus.svg" alt="minus_icon">
+              </button>
+              <p id="amount_counter">0</p>
+              <button class="increment_button" onclick="increment()">
+                <img src="./images/icon-plus.svg" alt="plus_icon">
+              </button>
+            </div>
+            <button class="add_btn" onclick="addProduct()">
+              <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"/></svg>
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </main>
+    
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
